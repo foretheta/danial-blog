@@ -5,17 +5,15 @@ sections:
     component: HeroBlock
     type: heroblock
     content: >-
-      This section can contain a subtitle or tagline. The recommended length is
-      one to three sentences, but can be changed as you prefer.
+      I'm the CEO and Founder of [Foretheta](https://www.foretheta.com) based out of Seattle, WA.
   - section_id: about
     component: ContentBlock
     type: contentblock
     title: About
     content: >-
-      This is the "about" excerpt. It can be used to provide a paragraph about
-      yourself that people can read on the homepage to get a sense of who you
-      are. There also exists a dedicated about page where you can write more
-      about yourself for those who are interested.
+      My current interests are in Machine Learning and Application
+      Security. I have a Masters in Information Security from [Carnegie Mellon University](http://heinz.cmu.edu/).
+      I also have a Bachelors in Computer Science from [LUMS](http://www.lums.edu.pk/).
     actions:
       - label: Contact Me
         url: /contact
