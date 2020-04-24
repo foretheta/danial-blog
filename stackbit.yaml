@@ -119,7 +119,7 @@ sourceMapping:
       file: config.yml
       fieldPath: 'params.footer.links[1].new_window'
 stackbit_banner:
-  show_banner: true
+  show_banner: false
   name: Fresh
   create_url: 'https://app.stackbit.com/create?theme=fresh'
   github_url: 'https://github.com/stackbithq/stackbit-theme-fresh'
