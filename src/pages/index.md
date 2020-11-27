@@ -5,7 +5,7 @@ sections:
     component: HeroBlock
     type: heroblock
     content: >-
-      I'm the Founder & CEO of [Foretheta](https://www.foretheta.com) based out of Seattle, WA. You can see a [full list of projects I'm currently working on here](https://danial.io/posts/projects-10fp/).
+      I'm the Founder & CEO of [Foretheta](https://www.foretheta.com) based out of Seattle, WA. Here is a [full list of projects I'm working on](https://danial.io/posts/projects-10fp/).
   - section_id: about
     component: ContentBlock
     type: contentblock
