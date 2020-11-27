@@ -3,7 +3,7 @@
     "palette": "blue",
     "header": {
         "title": "Danial",
-        "tagline": "I try to make the Internet a safer place. Maker of software. Alum of Amazon, CMU.",
+        "tagline": "Maker/breaker of software. Alum of Amazon, CMU. I write about software and the business of software",
         "profile_img": "https://res.cloudinary.com/practicaldev/image/fetch/s--xztEEYSe--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/174443/d6e3a818-1738-4965-a123-9330f8f2abf2.png",
         "bg": "dark",
         "has_nav": true,
@@ -21,8 +21,13 @@
                 "text": "Traindex",
                 "url": "https://www.traindex.io/",
                 "new_window": true
+            },
+            {
+                "text": "Billgist",
+                "url": "https://www.billgist.com/",
+                "new_window": true
             }
         ]
     },
-    "title": "Stackbit Fresh Theme"
+    "title": "Danial Ranjha"
 }
