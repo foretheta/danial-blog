@@ -11,7 +11,7 @@ else
     npx @stackbit/stackbit-pull --stackbit-pull-api-url=https://api.stackbit.com/pull/5e63439f14b69200127309bf 
 fi
 
-find /opt/build/repo/src/pages/posts/ -type f -name '*.md' | xargs cat
+find /opt/build/repo/src/pages/posts/ -type f -name '*.md' -exec sed -i '/^\*\[This post/d' {} \;
 
 curl -s -X POST https://api.stackbit.com/project/5e63439f14b69200127309bf/webhook/build/ssgbuild > /dev/null
 gatsby build
