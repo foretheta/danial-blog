@@ -5,12 +5,6 @@
             "title": "Twitter",
             "icon": "fa-twitter",
             "url": "https://twitter.com/danialranjha"
-        },
-        {
-            "type": "devto",
-            "title": "DEV",
-            "icon": "fa-dev",
-            "url": "https://dev.to/danialranjha"
         }
     ]
 }
