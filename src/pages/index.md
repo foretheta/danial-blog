@@ -13,7 +13,7 @@ sections:
     content: >-
       I am a student of the business of software. My current focus is trying to grow my software projects. My technical
       interests are in Machine Learning and Application Security. I have a Masters in Information Security from
-      [Carnegie Mellon University](http://heinz.cmu.edu/). I also have a Bachelors in Computer Science from [LUMS](http://www.lums.edu.pk/).
+      [Carnegie Mellon University](https://heinz.cmu.edu/). I also have a Bachelors in Computer Science from [LUMS](https://www.lums.edu.pk/).
     actions:
       - label: Contact Me
         url: /contact
@@ -24,7 +24,7 @@ sections:
     num_posts_displayed: 4
     actions:
       - label: View Blog
-        url: blog/index.html
+        url: /blog/
 menus:
   main:
     weight: 1

@@ -8,19 +8,35 @@ import Footer from './Footer';
 
 export default class Body extends React.Component {
     render() {
+        const siteMetadata = _.get(this.props, 'pageContext.site.siteMetadata', {});
+        const pageTitle = _.get(this.props, 'pageContext.frontmatter.title');
+        const description = _.get(this.props, 'pageContext.frontmatter.excerpt') ||
+            _.get(this.props, 'pageContext.frontmatter.subtitle') ||
+            _.get(siteMetadata, 'description');
+        const siteUrl = _.trimEnd(_.get(siteMetadata, 'site_url', ''), '/');
+        const path = _.get(this.props, 'location.pathname', '/');
+        const canonicalUrl = _.get(this.props, 'pageContext.frontmatter.canonical_url') ||
+            (siteUrl && (siteUrl + path));
+        const title = (pageTitle ? pageTitle + ' - ' : '') + _.get(siteMetadata, 'title');
         return (
             <React.Fragment>
                 <Helmet>
-                    <title>{_.get(this.props, 'pageContext.frontmatter.title') && _.get(this.props, 'pageContext.frontmatter.title') + ' - '}{_.get(this.props, 'pageContext.site.siteMetadata.title')}</title>
+                    <title>{title}</title>
                     <meta charSet="utf-8"/>
-                    <meta name="viewport" content="width=device-width, initialScale=1.0" />
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                     <meta name="google" content="notranslate" />
+                    {description && <meta name="description" content={description}/>}
+                    {description && <meta property="og:description" content={description}/>}
+                    <meta property="og:title" content={title}/>
+                    <meta property="og:type" content={_.get(this.props, 'pageContext.frontmatter.template') === 'post' ? 'article' : 'website'}/>
+                    {canonicalUrl && <meta property="og:url" content={canonicalUrl}/>}
+                    <meta name="twitter:card" content="summary"/>
+                    <meta name="twitter:title" content={title}/>
+                    {description && <meta name="twitter:description" content={description}/>}
+                    {_.get(siteMetadata, 'theme_color') && <meta name="theme-color" content={_.get(siteMetadata, 'theme_color')}/>}
                     <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i" rel="stylesheet"/>
                     <link rel="stylesheet" href={safePrefix('assets/css/main.css')}/>
-                    {(_.get(this.props, 'pageContext.frontmatter.template') === 'post') &&  
-                    _.get(this.props, 'pageContext.frontmatter.canonical_url') && 
-                    <link rel="canonical" href={_.get(this.props, 'pageContext.frontmatter.canonical_url')}/>
-                    }
+                    {canonicalUrl && <link rel="canonical" href={canonicalUrl}/>}
                 </Helmet>
                 <div id="page" className={'site style-' + _.get(this.props, 'pageContext.site.siteMetadata.layout_style') + ' palette-' + _.get(this.props, 'pageContext.site.siteMetadata.palette')}>
                   <Header {...this.props} />

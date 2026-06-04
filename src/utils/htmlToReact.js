@@ -1,7 +1,5 @@
 import React from 'react';
-import ReactHtmlParser, { convertNodeToElement } from 'react-html-parser';
-import ScriptTag from 'react-script-tag';
-import _ from 'lodash';
+import ReactHtmlParser from 'react-html-parser';
 
 export default function(html) {
     if (!html) {
@@ -10,16 +8,7 @@ export default function(html) {
     return ReactHtmlParser(html, {
         transform: (node, index) => {
             if (node.type === 'script') {
-                console.log(node);
-                if (!_.isEmpty(node.children)) {
-                    return (
-                        <ScriptTag key={index} {...node.attribs}>
-                            {_.map(node.children, childNode => convertNodeToElement(childNode, index, _.noop()))}
-                        </ScriptTag>
-                    );
-                } else {
-                    return <ScriptTag key={index} {...node.attribs}/>;
-                }
+                return <React.Fragment key={index}/>;
             }
         }
     });

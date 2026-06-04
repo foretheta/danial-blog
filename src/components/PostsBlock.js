@@ -12,6 +12,18 @@ export default class PostsBlock extends React.Component {
             <section id={_.get(this.props, 'section.section_id')} className="block">
               <h2 className="block-title underline">{_.get(this.props, 'section.title')}</h2>
               <div className="post-feed">
+                {_.isEmpty(recent_posts) && (
+                <article className="post">
+                  <div className="post-inside">
+                    <header className="post-header">
+                      <h3 className="post-title">Writing archive coming back soon</h3>
+                    </header>
+                    <div className="post-content">
+                      <p>I am refreshing the public archive. Check back soon for recent writing.</p>
+                    </div>
+                  </div>
+                </article>
+                )}
                 {_.map(recent_posts, (post, post_idx) => (
                 <article key={post_idx} className="post">
                   <div className="post-inside">

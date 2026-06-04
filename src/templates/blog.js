@@ -11,6 +11,18 @@ export default class Blog extends React.Component {
         return (
             <Layout {...this.props}>
               <div className="post-feed">
+                {_.isEmpty(display_posts) && (
+                <article className="post">
+                  <div className="post-inside">
+                    <header className="post-header">
+                      <h2 className="post-title">Writing archive coming back soon</h2>
+                    </header>
+                    <div className="post-content">
+                      <p>I am refreshing the public archive. Check back soon, or reach out if you are looking for a specific older post.</p>
+                    </div>
+                  </div>
+                </article>
+                )}
                 {_.map(display_posts, (post, post_idx) => (
                 <article key={post_idx} className="post">
                   <div className="post-inside">

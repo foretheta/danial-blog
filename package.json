@@ -6,7 +6,7 @@
   "scripts": {
     "develop": "gatsby develop",
     "start": "npm run develop",
-    "build": "gatsby build --prefix-paths",
+    "build": "CI=1 GATSBY_TELEMETRY_DISABLED=1 NO_UPDATE_NOTIFIER=1 gatsby build --prefix-paths",
     "serve": "gatsby serve"
   },
   "dependencies": {

@@ -24,22 +24,22 @@ export default class Contact extends React.Component {
               }
               <div className="post-content">
                 {htmlToReact(_.get(this.props, 'pageContext.html'))}
-                <form name="contactForm" method="POST" netlifyHoneypot="bot-field" data-netlify="true" id="contact-form"
+                <form name="contactForm" method="POST" data-netlify-honeypot="bot-field" data-netlify="true" id="contact-form"
                   className="contact-form">
                   <p className="screen-reader-text">
                     <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                   </p>
                   <p className="form-row">
-                    <label className="form-label">Name *</label>
-                    <input type="text" name="name" placeholder="Your name..." className="form-input"/>
+                    <label className="form-label" htmlFor="contact-name">Name *</label>
+                    <input id="contact-name" type="text" name="name" placeholder="Your name..." className="form-input" required/>
                   </p>
                   <p className="form-row">
-                    <label className="form-label">Email *</label>
-                    <input type="email" name="email" placeholder="Your email address..." className="form-input"/>
+                    <label className="form-label" htmlFor="contact-email">Email *</label>
+                    <input id="contact-email" type="email" name="email" placeholder="Your email address..." className="form-input" required/>
                   </p>
                   <p className="form-row">
-                    <label className="form-label">Message *</label>
-                    <textarea name="message" placeholder="Your message..." className="form-textarea" rows="7" />
+                    <label className="form-label" htmlFor="contact-message">Message *</label>
+                    <textarea id="contact-message" name="message" placeholder="Your message..." className="form-textarea" rows="7" required />
                   </p>
                   <input type="hidden" name="form-name" value="contactForm" />
                   <p className="form-row">

@@ -384,7 +384,7 @@ models:
         name: excerpt
         label: Excerpt
         description: The excerpt of the post displayed in the blog feed.
-      - type: image
+      - type: string
         name: canonical_url
         label: Canonical URL
         description: 'The canonical url of the post, if post originates elsewhere.'
