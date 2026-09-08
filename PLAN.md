@@ -105,14 +105,13 @@
    - Removed legacy browser-prefix clutter and obsolete palette overrides from the compiled stylesheet; touched Sass map helpers now use the module API.
    - Local browser QA passed across home, blog, contact, prose-post, and project-table surfaces at desktop and responsive widths, including menu interaction, form validation/focus, loaded imagery, and no page-level overflow or console errors.
    - GitHub Actions run `34206213669`, hosted preview QA, and post-promotion production QA passed for commit `7d032b4`.
-14. Improve key UX surfaces.
-   - Stronger homepage hero and clearer CTA.
-   - Better recent-posts presentation.
-   - Cleaner blog list cards and metadata.
-   - Better mobile navigation and responsiveness.
-   - Improved footer/social/contact presentation.
-   - Add a richer homepage structure: featured projects, current focus/now, credibility highlights, and clearer next actions.
-   - Make the contact page more useful with alternate contact paths, response expectations, and better form UX/validation states.
+14. Improve key UX surfaces. **Completed, except owner-supplied content.**
+   - Added a compact primary/secondary CTA hierarchy to the homepage and a shared, scan-friendly post-feed treatment with prominent dates, excerpts, and 44px title targets.
+   - Improved blog archive hierarchy, mobile navigation labeling, expanded state, focus trapping/return, Escape handling, and route-close behavior.
+   - Reworked the footer into semantic project navigation with the existing social link, and made Markdown tables focusable, contained keyboard/touch scrollers.
+   - Added repository-backed email/Twitter contact options plus inline, ARIA-connected required/email validation states without changing Netlify form detection or submission behavior.
+   - Local desktop/responsive browser QA passed for hero balance, post scanning, target sizes, footer wrapping, menu keyboard behavior, validation error/correction states, table keyboard scrolling, and no page-level overflow or console errors.
+   - **Needs owner input:** richer featured-project/current-focus/credibility content, response expectations, newer project statuses, and additional social links have no current authoritative source in the repository.
 15. Improve assets and polish.
    - Replace the confirmed-broken remote profile and post image sources with controlled assets.
    - Optimize images and visual consistency.

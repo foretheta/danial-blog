@@ -186,8 +186,10 @@ table {
   line-height: 1.5;
   margin: 0 0 _space(5);
   max-width: 100%;
+  overscroll-behavior-inline: contain;
   overflow-x: auto;
   text-align: left;
+  -webkit-overflow-scrolling: touch;
   width: max-content;
 }
 

@@ -6,6 +6,11 @@ sections:
     type: heroblock
     content: >-
       I'm the Founder & CEO of [Foretheta](https://www.foretheta.com) based out of Seattle, WA. Here is a [full list of projects I've worked on](/posts/projects-10fp/).
+    actions:
+      - label: View Projects
+        url: /posts/projects-10fp/
+      - label: Contact Me
+        url: /contact/
   - section_id: about
     component: ContentBlock
     type: contentblock
@@ -14,9 +19,6 @@ sections:
       I am a student of the business of software. My current focus is trying to grow my software projects. My technical
       interests are in Machine Learning and Application Security. I have a Masters in Information Security from
       [Carnegie Mellon University](https://heinz.cmu.edu/). I also have a Bachelors in Computer Science from [LUMS](https://www.lums.edu.pk/).
-    actions:
-      - label: Contact Me
-        url: /contact/
   - section_id: recent-posts
     component: PostsBlock
     type: postsblock

@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 
-import {markdownify} from '../utils';
+import {markdownify, Link, safePrefix} from '../utils';
 
 export default class HeroBlock extends React.Component {
     render() {
@@ -15,6 +15,14 @@ export default class HeroBlock extends React.Component {
               <div className="hero-text">
                 {markdownify(_.get(this.props, 'section.content'))}
               </div>
+              {_.get(this.props, 'section.actions') &&
+              <p className="hero-actions">
+                {_.map(_.get(this.props, 'section.actions'), (action, action_idx) => (
+                <Link key={action_idx} to={safePrefix(_.get(action, 'url'))}
+                  className={action_idx === 0 ? 'button' : 'button button-secondary'}>{_.get(action, 'label')}</Link>
+                ))}
+              </p>
+              }
             </section>
         );
     }
