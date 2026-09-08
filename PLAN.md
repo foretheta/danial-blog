@@ -26,8 +26,8 @@
    - Explicit branch deploy `6a9f8e65b2925036fdcbc6ff` built commit `252cfe9` successfully without Stackbit.
    - Netlify's Git integration currently auto-builds only `master`; use an explicit branch deploy for feature-branch previews until branch deploys or PR previews are intentionally enabled.
 4. Production promotion is complete.
-   - Production points to verified Gatsby 5 deploy `6a9fb5f22063cd71ec547f56`, built from commit `dacf1f7`.
-   - Immediate rollback deploy `6a9fa994e51d8ad2a6b796d9`, earlier repository-owned deploy `6a9f8e65b2925036fdcbc6ff`, and the original 2021 deploy `60b0048f729f6c21f4807364` remain available.
+   - Production points to verified routing-hardening deploy `6a9fbb05e51d8a45edb79822`, built from commit `c83d50d` on the Gatsby 5 baseline.
+   - Immediate rollback deploy `6a9fb5f22063cd71ec547f56`, earlier repository-owned deploys, and the original 2021 deploy `60b0048f729f6c21f4807364` remain available.
    - Production QA passed for historical posts, working avatar, metadata, discovery files, contact validation, and desktop/mobile layout.
 
 ## Priority 0 — Protect production before changing anything
@@ -72,6 +72,7 @@
    - Hardened and documented `safePrefix`, `toUrl`, `getPage`, and `getPages`: invalid or missing route data now returns stable caller-safe values, while valid exact lookups and Gatsby path prefixes retain their existing behavior.
    - Removed the stale relative-resolution TODOs; lookups are explicitly repository-relative because no current-page argument exists.
    - Added focused Node test coverage for invalid inputs, path shape, root and missing routes, fragments, external URLs, exact lookups, and Gatsby path-prefix behavior.
+   - All 7 routing tests, GitHub Actions run `34200046732`, hosted preview navigation, and post-promotion production navigation passed for commit `c83d50d`.
 9. Fix stale content/config issues.
    - Replace placeholder `email@example.com` in `src/data/author.json`.
    - Review outdated external `http://` links and switch to `https://` where available.
