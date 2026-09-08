@@ -4,7 +4,7 @@
     "header": {
         "title": "Danial",
         "tagline": "Maker/breaker of software • Alum of Amazon, CMU • Now: Billgist.com · Traindex.io · Foretheta.com • I write about software and the business of software",
-        "profile_img": "https://res.cloudinary.com/practicaldev/image/fetch/s--xztEEYSe--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/174443/d6e3a818-1738-4965-a123-9330f8f2abf2.png",
+        "profile_img": "/images/avatar.png",
         "bg": "dark",
         "has_nav": true,
         "has_social": true
