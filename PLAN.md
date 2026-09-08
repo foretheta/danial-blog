@@ -50,10 +50,10 @@
    - GitHub Actions run `34193965720` passed all install, clean, and production-build steps for commit `0a5e804`.
 
 ## Priority 2 — Reduce security risk
-5. Remove dangerous content script execution.
-   - Stop rendering arbitrary `<script>` tags from content in `src/utils/htmlToReact.js`.
-   - Remove debug logging from content rendering.
-   - Decide on sanitization or stricter content rules.
+5. Remove dangerous content script execution. **Completed.**
+   - `src/utils/htmlToReact.js` drops parsed `<script>` nodes instead of rendering them.
+   - Content rendering contains no debug logging.
+   - Content remains restricted to repository-owned Markdown; broader HTML sanitization is deferred until the framework migration can replace the legacy parser cleanly.
 6. Modernize dependencies in a staged way.
    - Upgrade to a supported Gatsby version.
    - Replace `node-sass` with `sass`.
