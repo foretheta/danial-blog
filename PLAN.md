@@ -26,7 +26,8 @@
    - Explicit branch deploy `6a9f8e65b2925036fdcbc6ff` built commit `252cfe9` successfully without Stackbit.
    - Netlify's Git integration currently auto-builds only `master`; use an explicit branch deploy for feature-branch previews until branch deploys or PR previews are intentionally enabled.
 4. Production promotion is complete.
-   - Production points to deploy `6a9f8e65b2925036fdcbc6ff` at commit `252cfe9`; rollback deploy `60b0048f729f6c21f4807364` remains available.
+   - Production points to verified deploy `6a9fa994e51d8ad2a6b796d9`, built from the `c2b773f` tree after Stackbit retirement and CI hardening.
+   - Immediate rollback deploy `6a9f8e65b2925036fdcbc6ff` and the original 2021 deploy `60b0048f729f6c21f4807364` remain available.
    - Production QA passed for historical posts, working avatar, metadata, discovery files, contact validation, and desktop/mobile layout.
 
 ## Priority 0 — Protect production before changing anything
