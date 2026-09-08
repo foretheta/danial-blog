@@ -26,8 +26,8 @@
    - Explicit branch deploy `6a9f8e65b2925036fdcbc6ff` built commit `252cfe9` successfully without Stackbit.
    - Netlify's Git integration currently auto-builds only `master`; use an explicit branch deploy for feature-branch previews until branch deploys or PR previews are intentionally enabled.
 4. Production promotion is complete.
-   - Production points to verified design-system deploy `6a9fcb7eea64dbfc233d1cbc`, built from commit `7d032b4` on the Gatsby 5 baseline.
-   - Immediate rollback deploy `6a9fc420a8f14040d7b3b073`, earlier repository-owned deploys, and the original 2021 deploy `60b0048f729f6c21f4807364` remain available.
+   - Production points to verified UX-refresh deploy `6a9fd2252063cd6073548011`, built from commit `3338a86` on the Gatsby 5 baseline.
+   - Immediate rollback deploy `6a9fcb7eea64dbfc233d1cbc`, earlier repository-owned deploys, and the original 2021 deploy `60b0048f729f6c21f4807364` remain available.
    - Production QA passed for historical posts, working avatar, metadata, discovery files, contact validation, internal navigation, dead-link cleanup, and responsive layout.
 
 ## Priority 0 — Protect production before changing anything
@@ -112,11 +112,12 @@
    - Added repository-backed email/Twitter contact options plus inline, ARIA-connected required/email validation states without changing Netlify form detection or submission behavior.
    - Local desktop/responsive browser QA passed for hero balance, post scanning, target sizes, footer wrapping, menu keyboard behavior, validation error/correction states, table keyboard scrolling, and no page-level overflow or console errors.
    - **Needs owner input:** richer featured-project/current-focus/credibility content, response expectations, newer project statuses, and additional social links have no current authoritative source in the repository.
-15. Improve assets and polish.
-   - Replace the confirmed-broken remote profile and post image sources with controlled assets.
-   - Optimize images and visual consistency.
-   - Remove unnecessary public-site editing/widget scripts if they are no longer needed in production.
-   - Add broader social/profile links where appropriate (e.g. GitHub, LinkedIn, X) and tighten branding consistency.
+   - All 15 tests, local and hosted browser QA, and post-promotion production QA passed for commit `3338a86`. GitHub Actions run `34208494568` has one successful build job with zero annotations, but GitHub has not finalized its parent run status.
+15. Improve assets and polish. **Partially completed; remaining safe work blocked.**
+   - **Completed:** replaced the broken remote profile image with a controlled local asset; restored posts no longer reference broken remote post images.
+   - **Completed audit:** the current site references only `avatar.png`; historical JPGs remain unreferenced but are retained pending human review rather than deleted speculatively.
+   - **Blocked on Pi goal resume:** right-size the 803px avatar and replace the full Font Awesome/reframe payload used for one social icon and no current embeds. The mandatory implementation delegate reported its goal is paused and ran zero tools.
+   - **Needs owner input:** broader GitHub/LinkedIn/X links and further brand assets cannot be added without authoritative destinations and preferences.
 
 ## Suggested execution order
 1. Confirm Netlify/Stackbit production setup.
