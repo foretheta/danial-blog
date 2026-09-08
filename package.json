@@ -8,6 +8,7 @@
     "start": "npm run develop",
     "test": "node --test test/*.test.cjs",
     "build": "CI=1 GATSBY_TELEMETRY_DISABLED=1 NO_UPDATE_NOTIFIER=1 gatsby build --prefix-paths",
+    "check:public": "node scripts/check-public.cjs public",
     "serve": "gatsby serve"
   },
   "dependencies": {

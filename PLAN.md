@@ -26,9 +26,9 @@
    - Explicit branch deploy `6a9f8e65b2925036fdcbc6ff` built commit `252cfe9` successfully without Stackbit.
    - Netlify's Git integration currently auto-builds only `master`; use an explicit branch deploy for feature-branch previews until branch deploys or PR previews are intentionally enabled.
 4. Production promotion is complete.
-   - Production points to verified routing-hardening deploy `6a9fbb05e51d8a45edb79822`, built from commit `c83d50d` on the Gatsby 5 baseline.
-   - Immediate rollback deploy `6a9fb5f22063cd71ec547f56`, earlier repository-owned deploys, and the original 2021 deploy `60b0048f729f6c21f4807364` remain available.
-   - Production QA passed for historical posts, working avatar, metadata, discovery files, contact validation, and desktop/mobile layout.
+   - Production points to verified content-cleanup deploy `6a9fbdda343c6e113cd0d3a6`, built from commit `1e75d88` on the Gatsby 5 baseline.
+   - Immediate rollback deploy `6a9fbb05e51d8a45edb79822`, earlier repository-owned deploys, and the original 2021 deploy `60b0048f729f6c21f4807364` remain available.
+   - Production QA passed for historical posts, working avatar, metadata, discovery files, contact validation, internal navigation, dead-link cleanup, and responsive layout.
 
 ## Priority 0 — Protect production before changing anything
 1. Confirm the current production source of truth. **Completed.**
@@ -48,7 +48,7 @@
 4. Add baseline CI. **Completed.**
    - GitHub Actions installs with `npm ci`, cleans Gatsby, and runs the production build on push/PR.
    - The workflow reads Node from `.nvmrc` and uses npm's lockfile cache for reproducible builds.
-   - GitHub Actions run `34193965720` passed all install, clean, and production-build steps for commit `0a5e804`.
+   - GitHub Actions run `34201016997` passed all install, clean, and production-build steps for commit `1e75d88`; current `checkout@v7` and `setup-node@v7` produced no runner annotations.
 
 ## Priority 2 — Reduce security risk
 5. Remove dangerous content script execution. **Completed.**
@@ -79,24 +79,22 @@
    - ~~Correct the `canonical_url` field type in `stackbit.yaml`.~~ Retired with the obsolete Stackbit CMS schema; there is no active Stackbit model to correct.
    - **Needs owner input:** refresh the project roster/statuses and add newer posts; the repository has no authoritative facts after 2021.
    - **Completed:** homepage project/contact links now use canonical internal routes, and working external project links were verified at their current HTTPS destinations.
-10. Verify Netlify contact form behavior.
-   - Confirm the form is actually present in the built HTML and being detected by Netlify.
-   - If not, update implementation so static form detection works reliably.
-   - Add client-side required/email validation and confirm an empty form cannot reach Netlify's success page.
+10. Verify Netlify contact form behavior. **Completed, except approved live submission.**
+   - The form is present in built HTML and detected by Netlify as `contact`.
+   - Client-side required/email validation blocks empty and malformed submissions from reaching Netlify's success page.
+   - A valid production submission remains intentionally untested until approval is available to create a real Netlify form entry and notification.
 
 ## Priority 4 — Improve SEO, metadata, and site quality
-11. Add modern SEO defaults.
-   - Meta description.
-   - Open Graph tags.
-   - Twitter card tags.
-   - Canonical URLs for all pages.
-   - Favicon/app icon/theme-color support.
-   - Add `robots.txt` and `sitemap.xml`.
-12. Add quality checks.
-   - Link checking.
-   - Optional Lighthouse/accessibility checks.
-   - Optional CodeQL / security scanning.
-   - Dependabot or Renovate for ongoing updates.
+11. Add modern SEO defaults. **Completed.**
+   - Added page descriptions, Open Graph tags, Twitter card tags, and canonical URLs for all pages.
+   - Added favicon/app icon/theme-color support plus valid `robots.txt` and `sitemap.xml` discovery files.
+   - Hosted preview and production browser QA verified the metadata and discovery endpoints.
+12. Add quality checks. **Completed.**
+   - Added a dependency-free generated-artifact check for broken internal links, missing local image/static targets, and missing fragments; focused fixtures prove both success and actionable failure behavior.
+   - CI now runs all Node tests before building and validates the generated `public/` artifact afterward.
+   - Added low-noise monthly Dependabot checks for npm and GitHub Actions, grouped to minor/patch updates with conservative pull-request limits; major updates remain deliberate migrations.
+   - Lighthouse/accessibility automation remains optional because browser setup, audit variability, and runtime cost outweigh its current value for six static routes; browser QA remains in the release gate.
+   - CodeQL remains deferred because the small static first-party JavaScript surface provides limited incremental signal relative to workflow cost; dependency audit, script-node filtering, and build/link tests cover the current higher-value risks.
 
 ## Priority 5 — Improve look and feel
 13. Refresh the design system.
