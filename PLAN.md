@@ -26,8 +26,8 @@
    - Explicit branch deploy `6a9f8e65b2925036fdcbc6ff` built commit `252cfe9` successfully without Stackbit.
    - Netlify's Git integration currently auto-builds only `master`; use an explicit branch deploy for feature-branch previews until branch deploys or PR previews are intentionally enabled.
 4. Production promotion is complete.
-   - Production points to verified deploy `6a9fa994e51d8ad2a6b796d9`, built from the `c2b773f` tree after Stackbit retirement and CI hardening.
-   - Immediate rollback deploy `6a9f8e65b2925036fdcbc6ff` and the original 2021 deploy `60b0048f729f6c21f4807364` remain available.
+   - Production points to verified Gatsby 5 deploy `6a9fb5f22063cd71ec547f56`, built from commit `dacf1f7`.
+   - Immediate rollback deploy `6a9fa994e51d8ad2a6b796d9`, earlier repository-owned deploy `6a9f8e65b2925036fdcbc6ff`, and the original 2021 deploy `60b0048f729f6c21f4807364` remain available.
    - Production QA passed for historical posts, working avatar, metadata, discovery files, contact validation, and desktop/mobile layout.
 
 ## Priority 0 — Protect production before changing anything
@@ -61,6 +61,7 @@
    - Replaced `react-html-parser` with `html-react-parser` while retaining script-node removal.
    - Internalized the Stackbit menus plugin and replaced its unsupported page-node mutation with `deletePage`/`createPage` updates that preserve existing page data and context.
    - Regenerated `package-lock.json` with Node 18.20.8/npm 10.8.2. Under that runtime, `npm ci`, Gatsby clean, and the production build pass; static artifact checks cover all six routes, navigation, CSS, metadata, discovery files, and contact form markup.
+   - GitHub Actions run `34198118434`, hosted Netlify preview QA, and post-promotion production QA all passed for commit `dacf1f7`.
 7. Re-run audit after framework upgrades. **Completed.**
    - `npm audit` improved from 203 vulnerabilities (13 low, 68 moderate, 95 high, 27 critical) to 47 (7 low, 21 moderate, 19 high, 0 critical).
    - Remaining vulnerable direct dependency paths are Gatsby and its official plugins (`gatsby`, `gatsby-plugin-react-helmet`, `gatsby-source-filesystem`, and `gatsby-transformer-remark`) plus legacy direct `marked`; npm currently offers no non-breaking Gatsby 5 remediation, and one-off forced transitive changes were intentionally avoided.
