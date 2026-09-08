@@ -7,6 +7,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      CI: "1"
+      GATSBY_TELEMETRY_DISABLED: "1"
+      NO_UPDATE_NOTIFIER: "1"
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -19,6 +23,9 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Clean Gatsby cache
+        run: npx --no-install gatsby clean
 
       - name: Build site
         run: npm run build
