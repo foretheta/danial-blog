@@ -26,8 +26,8 @@
    - Explicit branch deploy `6a9f8e65b2925036fdcbc6ff` built commit `252cfe9` successfully without Stackbit.
    - Netlify's Git integration currently auto-builds only `master`; use an explicit branch deploy for feature-branch previews until branch deploys or PR previews are intentionally enabled.
 4. Production promotion is complete.
-   - Production points to verified quality-check deploy `6a9fc420a8f14040d7b3b073`, built from commit `8b15b92` on the Gatsby 5 baseline.
-   - Immediate rollback deploy `6a9fbdda343c6e113cd0d3a6`, earlier repository-owned deploys, and the original 2021 deploy `60b0048f729f6c21f4807364` remain available.
+   - Production points to verified design-system deploy `6a9fcb7eea64dbfc233d1cbc`, built from commit `7d032b4` on the Gatsby 5 baseline.
+   - Immediate rollback deploy `6a9fc420a8f14040d7b3b073`, earlier repository-owned deploys, and the original 2021 deploy `60b0048f729f6c21f4807364` remain available.
    - Production QA passed for historical posts, working avatar, metadata, discovery files, contact validation, internal navigation, dead-link cleanup, and responsive layout.
 
 ## Priority 0 — Protect production before changing anything
@@ -104,6 +104,7 @@
    - Modernized shared header/navigation, footer, links/buttons, forms, tables, prose, and post-feed styling while preserving all routes, content, assets, and behavior.
    - Removed legacy browser-prefix clutter and obsolete palette overrides from the compiled stylesheet; touched Sass map helpers now use the module API.
    - Local browser QA passed across home, blog, contact, prose-post, and project-table surfaces at desktop and responsive widths, including menu interaction, form validation/focus, loaded imagery, and no page-level overflow or console errors.
+   - GitHub Actions run `34206213669`, hosted preview QA, and post-promotion production QA passed for commit `7d032b4`.
 14. Improve key UX surfaces.
    - Stronger homepage hero and clearer CTA.
    - Better recent-posts presentation.
