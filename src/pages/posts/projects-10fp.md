@@ -16,7 +16,7 @@ Projects I've worked on (and continue to work on). Current tally is 9.
 | Kempt.io | 2015 | iOS app to regain disk space by deleting bad photos | Shut it down |
 | [LegalRisk.io](https://angel.co/company/legalrisk-io) | 2016 | A tool to identify personal and professional relationships for managing malpractice risk | Shut it down |
 | [Foretheta](https://foretheta.com) | 2016 | Custom software dev and security agency | Active |
-| [Cheap Cheap Fares](https://cheapcheapfares.com) | 2019 | Cheap air fare alerting service | Shut it down |
+| Cheap Cheap Fares | 2019 | Cheap air fare alerting service | Shut it down |
 | [Traindex](https://traindex.io) | 2019 | Machine learning augmented search | Active |
 | [Whatsup](https://github.com/foretheta/whatsup/) | 2020 | Open source up/down monitor | Active |
 

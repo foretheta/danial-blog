@@ -5,7 +5,7 @@ sections:
     component: HeroBlock
     type: heroblock
     content: >-
-      I'm the Founder & CEO of [Foretheta](https://www.foretheta.com) based out of Seattle, WA. Here is a [full list of projects I'm working on](https://danial.io/posts/projects-10fp/).
+      I'm the Founder & CEO of [Foretheta](https://www.foretheta.com) based out of Seattle, WA. Here is a [full list of projects I've worked on](/posts/projects-10fp/).
   - section_id: about
     component: ContentBlock
     type: contentblock
@@ -16,7 +16,7 @@ sections:
       [Carnegie Mellon University](https://heinz.cmu.edu/). I also have a Bachelors in Computer Science from [LUMS](https://www.lums.edu.pk/).
     actions:
       - label: Contact Me
-        url: /contact
+        url: /contact/
   - section_id: recent-posts
     component: PostsBlock
     type: postsblock

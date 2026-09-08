@@ -74,11 +74,11 @@
    - Added focused Node test coverage for invalid inputs, path shape, root and missing routes, fragments, external URLs, exact lookups, and Gatsby path-prefix behavior.
    - All 7 routing tests, GitHub Actions run `34200046732`, hosted preview navigation, and post-promotion production navigation passed for commit `c83d50d`.
 9. Fix stale content/config issues.
-   - Replace placeholder `email@example.com` in `src/data/author.json`.
-   - Review outdated external `http://` links and switch to `https://` where available.
+   - **Completed:** `src/data/author.json` already uses `danial@danial.io`; no placeholder email remains.
+   - **Completed:** reviewed public external links, retained working HTTPS and intentional Wayback destinations, and removed the dead Cheap Cheap Fares link while preserving the historical project entry.
    - ~~Correct the `canonical_url` field type in `stackbit.yaml`.~~ Retired with the obsolete Stackbit CMS schema; there is no active Stackbit model to correct.
-   - Refresh stale homepage/blog/projects content (recent posts stop in 2021; projects page/tally is outdated).
-   - Review and repair brittle external project links (e.g. dead or redirected portfolio links).
+   - **Needs owner input:** refresh the project roster/statuses and add newer posts; the repository has no authoritative facts after 2021.
+   - **Completed:** homepage project/contact links now use canonical internal routes, and working external project links were verified at their current HTTPS destinations.
 10. Verify Netlify contact form behavior.
    - Confirm the form is actually present in the built HTML and being detected by Netlify.
    - If not, update implementation so static form detection works reliably.
