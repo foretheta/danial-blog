@@ -44,10 +44,10 @@
    - Netlify has one repository-owned build path: `npm run build` from `netlify.toml`.
    - The obsolete remote integration files `stackbit-build.sh`, `ssg-build.sh`, and `stackbit.yaml` have been removed.
    - Stackbit's remote content/build service is retired. The similarly named Gatsby stylesheet and menu plugins remain because the current site build consumes their output.
-4. Add baseline CI. **Completed locally; remote execution pending Codex verification.**
+4. Add baseline CI. **Completed.**
    - GitHub Actions installs with `npm ci`, cleans Gatsby, and runs the production build on push/PR.
    - The workflow reads Node from `.nvmrc` and uses npm's lockfile cache for reproducible builds.
-   - Install or build regressions fail the job; Codex must verify the first remote GitHub Actions run.
+   - GitHub Actions run `34193965720` passed all install, clean, and production-build steps for commit `0a5e804`.
 
 ## Priority 2 — Reduce security risk
 5. Remove dangerous content script execution.
