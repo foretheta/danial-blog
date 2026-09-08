@@ -31,7 +31,7 @@ module.exports = {
             }
         },
         {
-            resolve: `@stackbit/gatsby-plugin-menus`,
+            resolve: `gatsby-plugin-menus`,
             options: {
                 sourceUrlPath: `fields.url`,
                 pageContextProperty: `menus`,

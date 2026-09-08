@@ -55,14 +55,15 @@
    - `src/utils/htmlToReact.js` drops parsed `<script>` nodes instead of rendering them.
    - Content rendering contains no debug logging.
    - Content remains restricted to repository-owned Markdown; broader HTML sanitization is deferred until the framework migration can replace the legacy parser cleanly.
-6. Modernize dependencies in a staged way.
-   - Upgrade to a supported Gatsby version.
-   - Replace `node-sass` with `sass`.
-   - Upgrade React and related Gatsby plugins to compatible supported versions.
-   - Regenerate `package-lock.json` with a modern npm.
-7. Re-run audit after framework upgrades.
-   - Use the framework migration to eliminate the bulk of the 197 reported vulnerabilities.
-   - Avoid one-off patching of deeply transitive legacy packages unless required to unblock builds.
+6. Modernize dependencies in a staged way. **Completed.**
+   - Upgraded to Gatsby 5.16.1, React/ReactDOM 18.3.1, and compatible current official Gatsby plugins.
+   - Replaced `node-sass` and `node-sass-utils` with Dart Sass 1.98.0; the repository-owned stylesheet plugin uses Dart Sass's modern compile API.
+   - Replaced `react-html-parser` with `html-react-parser` while retaining script-node removal.
+   - Internalized the Stackbit menus plugin and replaced its unsupported page-node mutation with `deletePage`/`createPage` updates that preserve existing page data and context.
+   - Regenerated `package-lock.json` with Node 18.20.8/npm 10.8.2. Under that runtime, `npm ci`, Gatsby clean, and the production build pass; static artifact checks cover all six routes, navigation, CSS, metadata, discovery files, and contact form markup.
+7. Re-run audit after framework upgrades. **Completed.**
+   - `npm audit` improved from 203 vulnerabilities (13 low, 68 moderate, 95 high, 27 critical) to 47 (7 low, 21 moderate, 19 high, 0 critical).
+   - Remaining vulnerable direct dependency paths are Gatsby and its official plugins (`gatsby`, `gatsby-plugin-react-helmet`, `gatsby-source-filesystem`, and `gatsby-transformer-remark`) plus legacy direct `marked`; npm currently offers no non-breaking Gatsby 5 remediation, and one-off forced transitive changes were intentionally avoided.
 
 ## Priority 3 — Fix code and content bugs
 8. Fix brittle links and routing.

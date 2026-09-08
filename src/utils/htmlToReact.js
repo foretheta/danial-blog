@@ -1,14 +1,14 @@
 import React from 'react';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 
 export default function(html) {
     if (!html) {
         return null;
     }
-    return ReactHtmlParser(html, {
-        transform: (node, index) => {
+    return parse(html, {
+        replace: (node) => {
             if (node.type === 'script') {
-                return <React.Fragment key={index}/>;
+                return <React.Fragment/>;
             }
         }
     });
