@@ -26,8 +26,8 @@
    - Explicit branch deploy `6a9f8e65b2925036fdcbc6ff` built commit `252cfe9` successfully without Stackbit.
    - Netlify's Git integration currently auto-builds only `master`; use an explicit branch deploy for feature-branch previews until branch deploys or PR previews are intentionally enabled.
 4. Production promotion is complete.
-   - Production points to verified content-cleanup deploy `6a9fbdda343c6e113cd0d3a6`, built from commit `1e75d88` on the Gatsby 5 baseline.
-   - Immediate rollback deploy `6a9fbb05e51d8a45edb79822`, earlier repository-owned deploys, and the original 2021 deploy `60b0048f729f6c21f4807364` remain available.
+   - Production points to verified quality-check deploy `6a9fc420a8f14040d7b3b073`, built from commit `8b15b92` on the Gatsby 5 baseline.
+   - Immediate rollback deploy `6a9fbdda343c6e113cd0d3a6`, earlier repository-owned deploys, and the original 2021 deploy `60b0048f729f6c21f4807364` remain available.
    - Production QA passed for historical posts, working avatar, metadata, discovery files, contact validation, internal navigation, dead-link cleanup, and responsive layout.
 
 ## Priority 0 — Protect production before changing anything
@@ -95,6 +95,7 @@
    - Added low-noise monthly Dependabot checks for npm and GitHub Actions, grouped to minor/patch updates with conservative pull-request limits; major updates remain deliberate migrations.
    - Lighthouse/accessibility automation remains optional because browser setup, audit variability, and runtime cost outweigh its current value for six static routes; browser QA remains in the release gate.
    - CodeQL remains deferred because the small static first-party JavaScript surface provides limited incremental signal relative to workflow cost; dependency audit, script-node filtering, and build/link tests cover the current higher-value risks.
+   - All 12 tests, generated-artifact checks, GitHub Actions run `34203361381`, hosted preview QA, and post-promotion production QA passed for commit `8b15b92`.
 
 ## Priority 5 — Improve look and feel
 13. Refresh the design system.
