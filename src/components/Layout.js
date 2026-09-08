@@ -34,7 +34,6 @@ export default class Body extends React.Component {
                     <meta name="twitter:title" content={title}/>
                     {description && <meta name="twitter:description" content={description}/>}
                     {_.get(siteMetadata, 'theme_color') && <meta name="theme-color" content={_.get(siteMetadata, 'theme_color')}/>}
-                    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i" rel="stylesheet"/>
                     <link rel="stylesheet" href={safePrefix('assets/css/main.css')}/>
                     {canonicalUrl && <link rel="canonical" href={canonicalUrl}/>}
                 </Helmet>

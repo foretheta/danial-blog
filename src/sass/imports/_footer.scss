@@ -3,43 +3,38 @@
  * ----------------------------------------------------------------------------
  */
 .site-footer {
-  -ms-flex-align: center;
-  -webkit-align-items: center;
   align-items: center;
   border-top: 1px solid _palette(border);
-  display: -ms-flexbox;
-  display: -webkit-flex;
   display: flex;
-  padding-top: 2.5em;
+  padding-top: _space(5);
 
   .site-info {
-    font-size: 11px;
-    letter-spacing: 0.09em;
-    line-height: 1.5;
-    margin-bottom: 0;
-    text-transform: uppercase;
+    color: _palette(meta);
+    font-size: 0.75rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .site-info a {
+    color: _palette(primary);
   }
 
   .to-top {
-    border: 0;
+    align-items: center;
+    border: 1px solid _palette(border);
+    border-radius: 50%;
     color: _palette(primary);
     display: none;
-    -webkit-flex: 0 0 auto;
-    -ms-flex: 0 0 auto;
     flex: 0 0 auto;
-    height: 30px;
+    height: 40px;
+    justify-content: center;
     margin-left: auto;
-    position: relative;
-    width: 30px;
+    text-decoration: none;
+    width: 40px;
   }
 
   @media only screen and (max-width: 800px) {
-    .site-info {
-      margin-right: 15px;
-    }
-
-    .to-top {
-      display: block;
-    }
+    .site-info { margin-right: _space(3); }
+    .to-top { display: flex; }
   }
 }

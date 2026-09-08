@@ -98,10 +98,12 @@
    - All 12 tests, generated-artifact checks, GitHub Actions run `34203361381`, hosted preview QA, and post-promotion production QA passed for commit `8b15b92`.
 
 ## Priority 5 — Improve look and feel
-13. Refresh the design system.
-   - Improve typography, spacing, and contrast.
-   - Modernize color usage and visual hierarchy.
-   - Reduce template-era styling.
+13. Refresh the design system. **Completed.**
+   - Replaced the remote webfont with a fast system stack and introduced reusable typography, spacing, width, radius, color, and focus tokens in the existing Sass system.
+   - Adopted a restrained charcoal/white foundation with teal and muted-red accents, stronger hierarchy, accessible contrast, and consistent 6px radii.
+   - Modernized shared header/navigation, footer, links/buttons, forms, tables, prose, and post-feed styling while preserving all routes, content, assets, and behavior.
+   - Removed legacy browser-prefix clutter and obsolete palette overrides from the compiled stylesheet; touched Sass map helpers now use the module API.
+   - Local browser QA passed across home, blog, contact, prose-post, and project-table surfaces at desktop and responsive widths, including menu interaction, form validation/focus, loaded imagery, and no page-level overflow or console errors.
 14. Improve key UX surfaces.
    - Stronger homepage hero and clearer CTA.
    - Better recent-posts presentation.
