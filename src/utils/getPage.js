@@ -1,7 +1,3 @@
-import _ from 'lodash';
+import { getPage } from './routing.cjs';
 
-export default function(pages, pagePath) {
-    // TODO: resolve relative paths relative to current page
-    pagePath = pagePath.replace(/^\//, '');
-    return _.find(pages, {relativePath: pagePath});
-}
+export default getPage;

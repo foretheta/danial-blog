@@ -14,7 +14,7 @@
 
 ## Deployment workflow findings — 2026-09-07
 1. Local production builds and manual Netlify draft previews are working.
-   - Use Node 14 from `.nvmrc`, then run `npx --no-install gatsby clean`, `npm run build`, and `npm run serve`.
+   - Use Node 18 from `.nvmrc`, then run `npx --no-install gatsby clean`, `npm run build`, and `npm run serve`.
    - Upload the validated `public/` artifact only as a Netlify draft until production blockers below are resolved.
    - Fail packaging scripts immediately on ZIP/build errors; an empty ZIP otherwise creates a failed Netlify deploy record.
 2. Historical post recovery is complete on `codex/fix-avatar`.
@@ -36,7 +36,7 @@
    - Stackbit is not required: all post sources are committed and the successful repository-owned Netlify build ran without a content pull.
    - Netlify builds with `npm run build` and publishes `public`; no Stackbit build environment variable is needed.
 2. Make the current site reproducible. **Completed.**
-   - `README.md` documents the exact clean local/Netlify production build using Node 14, `npm ci`, Gatsby clean, and `npm run build`.
+   - `README.md` documents the exact clean local/Netlify production build using Node 18, `npm ci`, Gatsby clean, and `npm run build`.
    - All three historical post sources are committed under `src/pages/posts/`.
    - The obsolete `stackbit-build.sh`, including its checkout-path assumption and content rewrite, has been removed rather than retained as a second build path.
 
@@ -67,10 +67,11 @@
    - Remaining vulnerable direct dependency paths are Gatsby and its official plugins (`gatsby`, `gatsby-plugin-react-helmet`, `gatsby-source-filesystem`, and `gatsby-transformer-remark`) plus legacy direct `marked`; npm currently offers no non-breaking Gatsby 5 remediation, and one-off forced transitive changes were intentionally avoided.
 
 ## Priority 3 — Fix code and content bugs
-8. Fix brittle links and routing.
-   - Change `blog/index.html` references to canonical internal routes like `/blog/`.
-   - Review `safePrefix`, `toUrl`, `getPage`, and `getPages` behavior.
-   - Add guardrails for missing pages instead of hard crashes where appropriate.
+8. Fix brittle links and routing. **Completed.**
+   - Confirmed repository source already uses canonical `/blog/` routes and contains no `blog/index.html` references.
+   - Hardened and documented `safePrefix`, `toUrl`, `getPage`, and `getPages`: invalid or missing route data now returns stable caller-safe values, while valid exact lookups and Gatsby path prefixes retain their existing behavior.
+   - Removed the stale relative-resolution TODOs; lookups are explicitly repository-relative because no current-page argument exists.
+   - Added focused Node test coverage for invalid inputs, path shape, root and missing routes, fragments, external URLs, exact lookups, and Gatsby path-prefix behavior.
 9. Fix stale content/config issues.
    - Replace placeholder `email@example.com` in `src/data/author.json`.
    - Review outdated external `http://` links and switch to `https://` where available.
