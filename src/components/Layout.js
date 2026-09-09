@@ -34,6 +34,8 @@ export default class Body extends React.Component {
                     <meta name="twitter:title" content={title}/>
                     {description && <meta name="twitter:description" content={description}/>}
                     {_.get(siteMetadata, 'theme_color') && <meta name="theme-color" content={_.get(siteMetadata, 'theme_color')}/>}
+                    <link rel="icon" type="image/png" sizes="32x32" href={safePrefix('favicon.png')}/>
+                    <link rel="apple-touch-icon" sizes="180x180" href={safePrefix('apple-touch-icon.png')}/>
                     <link rel="stylesheet" href={safePrefix('assets/css/main.css')}/>
                     {canonicalUrl && <link rel="canonical" href={canonicalUrl}/>}
                 </Helmet>

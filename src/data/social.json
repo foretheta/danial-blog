@@ -3,7 +3,7 @@
         {
             "type": "twitter",
             "title": "Twitter",
-            "icon": "fa-twitter",
+            "mark": "X",
             "url": "https://twitter.com/danialranjha"
         }
     ]

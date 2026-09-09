@@ -113,10 +113,12 @@
    - Local desktop/responsive browser QA passed for hero balance, post scanning, target sizes, footer wrapping, menu keyboard behavior, validation error/correction states, table keyboard scrolling, and no page-level overflow or console errors.
    - **Needs owner input:** richer featured-project/current-focus/credibility content, response expectations, newer project statuses, and additional social links have no current authoritative source in the repository.
    - All 15 tests, local and hosted browser QA, and post-promotion production QA passed for commit `3338a86`. GitHub Actions run `34208494568` has one successful build job with zero annotations, but GitHub has not finalized its parent run status.
-15. Improve assets and polish. **Partially completed; remaining safe work blocked.**
+15. Improve assets and polish. **Completed and production-verified.**
    - **Completed:** replaced the broken remote profile image with a controlled local asset; restored posts no longer reference broken remote post images.
    - **Completed audit:** the current site references only `avatar.png`; historical JPGs remain unreferenced but are retained pending human review rather than deleted speculatively.
-   - **Blocked on Pi goal resume:** right-size the 803px avatar and replace the full Font Awesome/reframe payload used for one social icon and no current embeds. The mandatory implementation delegate reported its goal is paused and ran zero tools.
+   - **Completed locally:** resized the square PNG avatar from 803px to 256px for its 88px maximum rendered size, retaining nearly 3x source density, and replaced the single Twitter/X Font Awesome glyph with a repository-owned accessible text mark. Removed the now-unreferenced Font Awesome CSS and brand webfonts; the unrelated responsive-embed scripts remain unchanged.
+   - **Completed:** added repository-owned 32px favicon and 180px Apple touch icon variants derived from the profile mark and linked them from the shared document head.
+   - **Validation:** all 15 unit tests, a clean Node 18 production build, generated-artifact checks, and output reference checks pass. Local, Netlify draft `6aa1833b72f1095da20cf2e6`, and production deploy `6aa183937730f553b4309f61` browser QA passed for favicon metadata and responses, avatar sharpness, X-mark alignment, accessible social-link naming, target sizing, no horizontal overflow, and no console warnings or errors.
    - **Needs owner input:** broader GitHub/LinkedIn/X links and further brand assets cannot be added without authoritative destinations and preferences.
 
 ## Suggested execution order
